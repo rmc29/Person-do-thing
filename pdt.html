@@ -1,0 +1,32 @@
+<html>
+<head>
+<script language="javascript">
+
+/* Quick utility to check whether a piece of text conforms with the Person Do Thing word list: https://persondothing.com/ */
+
+var wordlist= new Set (["person","place","do","thing","eat", "feel", "get", "go","have","like","make","say","hear","see","think","use","want","big","far","fast","good","hot","many","other","real","hard","same","after","before","again","and","but","in","on","with","more","yes","no","can","up"]);
+
+function checkInput()
+{		
+	var output = "";
+	var inputstring = document.getElementById("inputbox").value.toLowerCase();
+	var inputarray = inputstring.split(/[^\w]/); //split on all nonword characters, including hyphen
+	for (i of inputarray) {
+		color = (wordlist.has(i) ? "green" : "red");
+		output += "<span style='color:" + color + "'>" + i + "</span> ";
+		
+	}		
+	outputdiv.innerHTML = output;
+}
+	
+</script>
+</head>
+<body>
+<p>This is a quick utility to check whether a piece of text conforms with the <a href="https://persondothing.com/">Person Do Thing</a> word list.</p>
+<p>Enter your clue into the text box. The words from your clue will be displayed below, with valid words in green and invalid words in red.</p>
+<textarea id="inputbox" rows=10 cols=100></textarea>
+<br>
+<button onclick="checkInput()">Check clue!</button>
+<div id="outputdiv">
+</body>
+</html>
