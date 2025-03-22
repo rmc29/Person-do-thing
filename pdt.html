@@ -9,9 +9,9 @@
 <body>
 <p>This is a quick utility to check whether a piece of text conforms with the <a href="https://persondothing.com/">Person Do Thing</a> word list.</p>
 <p>Enter your clue into the text box. The words from your clue will be displayed below, with valid words in green and invalid words in red.</p>
-<textarea id="inputbox" rows=10 cols=100></textarea>
+<textarea id="inputbox" rows=10 cols=100  oninput="checkInput()"></textarea>
 <br>
-<button onclick="checkInput()">Check clue!</button>
+<!-- <button onclick="checkInput()">Check clue!</button> -->
 <div id="outputdiv">
 </body>
 </html>
